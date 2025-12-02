@@ -1,0 +1,112 @@
+=========================================================
+Tips To increase upto 10GB from disk to swap ram:
+
+rm -f setup.sh; cat > setup.sh <<'EOF'
+#!/bin/bash
+set -e
+[[ $EUID -ne 0 ]] && { echo "Run as root"; exit 1; }
+swapoff -a 2>/dev/null || true
+rm -f /swapfile
+[[ $(df -m / | awk 'NR==2{print $4}') -lt 11264 ]] && { echo "Need ~11GB free space"; exit 1; }
+fallocate -l 10G /swapfile 2>/dev/null || dd if=/dev/zero of=/swapfile bs=1M count=10240 status=progress
+chmod 600 /swapfile
+mkswap /swapfile >/dev/null
+swapon /swapfile
+sed -i '/\/swapfile/d' /etc/fstab 2>/dev/null || true
+echo "/swapfile none swap sw 0 0" >> /etc/fstab
+sysctl vm.swappiness=10 >/dev/null 2>&1
+grep -q "^vm.swappiness" /etc/sysctl.conf || echo "vm.swappiness=10" >> /etc/sysctl.conf
+echo "10GB swap active:"; swapon --show; free -h
+EOF
+chmod +x setup.sh && bash setup.sh
+=======================================================================================
+
+Tips To increase upto 1GB only from disk to swap ram:
+
+rm setup.sh
+cat > setup.sh << 'EOF'
+#!/bin/bash
+
+# Script to set up a 1 GB swap file from disk usage on Debian 12 for Raspberry Pi 
+# Used for OpenMPTCProuter project
+
+# Exit on any error
+set -e
+
+# Check if script is run as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root. Use sudo or switch to root user."
+    exit 1
+fi
+
+# Variables
+SWAPFILE="/swapfile"
+SWAPSIZE="1G"
+SWAPPINESS=30
+
+# Step 1: Check for existing swap
+echo "Checking for existing swap..."
+if swapon --show | grep -q "$SWAPFILE"; then
+    echo "Swap file $SWAPFILE already exists and is active. Exiting."
+    exit 1
+fi
+
+# Step 2: Verify sufficient disk space
+echo "Checking available disk space..."
+FREE_SPACE=$(df -B1M / | tail -1 | awk '{print $4}')
+if [ "$FREE_SPACE" -lt 1024 ]; then
+    echo "Insufficient disk space. At least 1 GB is required. Available: $FREE_SPACE MB."
+    exit 1
+fi
+
+# Step 3: Create a 1 GB swap file
+echo "Creating 1 GB swap file at $SWAPFILE..."
+if ! fallocate -l "$SWAPSIZE" "$SWAPFILE" 2>/dev/null; then
+    echo "fallocate failed, trying dd instead..."
+    dd if=/dev/zero of="$SWAPFILE" bs=1M count=1024
+fi
+
+# Step 4: Secure the swap file
+echo "Setting permissions for swap file..."
+chmod 600 "$SWAPFILE"
+
+# Step 5: Format the swap file
+echo "Formatting swap file..."
+mkswap "$SWAPFILE"
+
+# Step 6: Enable the swap file
+echo "Enabling swap file..."
+swapon "$SWAPFILE"
+
+# Step 7: Make swap persistent
+echo "Adding swap file to /etc/fstab..."
+if ! grep -q "$SWAPFILE" /etc/fstab; then
+    cp /etc/fstab /etc/fstab.bak
+    echo "$SWAPFILE none swap sw 0 0" >> /etc/fstab
+else
+    echo "Swap file already in /etc/fstab, skipping."
+fi
+
+# Step 8: Set swappiness
+echo "Setting swappiness to $SWAPPINESS..."
+sysctl -w vm.swappiness="$SWAPPINESS"
+if ! grep -q "vm.swappiness" /etc/sysctl.conf; then
+    echo "vm.swappiness=$SWAPPINESS" >> /etc/sysctl.conf
+else
+    sed -i "s/.*vm.swappiness.*/vm.swappiness=$SWAPPINESS/" /etc/sysctl.conf
+fi
+
+# Step 9: Verify swap
+echo "Verifying swap setup..."
+swapon --show
+free -h
+
+echo "Swap setup completed successfully!"
+echo "A 1 GB swap file has been configured at $SWAPFILE with swappiness=$SWAPPINESS."
+echo "The system will use this swap space for OpenMPTCProuter."
+echo "Reboot to ensure persistence, then check with 'swapon --show' or 'free -h'."
+
+exit 0
+EOF
+bash setup.sh
+============================================================
