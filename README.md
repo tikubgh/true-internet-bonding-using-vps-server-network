@@ -4,7 +4,7 @@ It's in two parts server part vps instalaltion and client part Raspberry-pi open
 
 Installation server: check file "Debian-vps-script" & "AMD-x86-64-ubuntu-22.04-vps-script"
 
-Installation client: Download OS ( Flash using BalenaEtcher ),
+Installation client: Download Edited Openwrt ( Flash using BalenaEtcher = https://bit.ly/4pIBwKU ),
 RaspberryPi 4B link = https://bit.ly/44Cfkdf
 RaspberryPi 5 Link = https://bit.ly/4rwfoVO
 
