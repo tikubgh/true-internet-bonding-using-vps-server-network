@@ -3,6 +3,7 @@ True Internet bonding joint two ISP internet speed example 50mbps (ISP-1) & 50 m
 It's in two parts server part vps instalaltion and client part Raspberry-pi openwrt installation,
 
 Installation server: check file "Debian-vps-script" & "AMD-x86-64-ubuntu-22.04-vps-script"
+Sucessfull Installation: Get the Client Key, username, vps ip address.
 
 Installation client: Download Edited Openwrt ( Flash using BalenaEtcher = https://bit.ly/4pIBwKU ),
 RaspberryPi 4B link = https://bit.ly/44Cfkdf
