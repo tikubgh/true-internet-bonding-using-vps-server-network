@@ -1,4 +1,6 @@
 True Internet bonding joint two ISP internet speed example 50mbps (ISP-1) & 50 mbps (ISP-2) equals 100mbps output using single connection IDM full 100 mbps bandwidth.
+Main Features:
+If we have a big file size download data with no resume facility with single connection link it can easily download with combined 100 mbps speed.
 
 It's in two parts server part vps instalaltion and client part Raspberry-pi openwrt installation,
 
