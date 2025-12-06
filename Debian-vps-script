@@ -10,3 +10,4 @@ wget -O - https://www.openmptcprouter.com/server/debian-x86_64.sh | KERNEL="6.12
 wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh debian-x86_64.sh
 reboot
 
+after reboot ssh port chnaged to: 65222
