@@ -11,3 +11,13 @@ wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh
 reboot
 
 after reboot ssh port chnaged to: 65222
+
+create swap space for 512mb ram vps
+Reboot to ensure persistence, then check with 
+'swapon --show' or 'free -h' 
+df -h (disk space check)
+apt install htop
+htop (ram , cpu check)
+
+
+
