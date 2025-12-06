@@ -1,5 +1,6 @@
 =========================================================
 Tips To increase upto 10GB from disk to swap ram:
+=========================================================
 
 rm -f setup.sh; cat > setup.sh <<'EOF'
 #!/bin/bash
@@ -21,7 +22,9 @@ EOF
 chmod +x setup.sh && bash setup.sh
 =======================================================================================
 
-Tips To increase upto 1GB only from disk to swap ram:
+==================================================================
+Tips To increase upto 1GB only from disk to swap 512 ram:
+================================================================
 
 rm setup.sh
 cat > setup.sh << 'EOF'
