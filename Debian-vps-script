@@ -3,14 +3,21 @@ sudo apt update && sudo apt install ufw -y && sudo ufw allow from any && sudo uf
 
 Install by github:
 sudo apt update && wget https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && chmod +x debian9-x86_64.sh && KERNEL="6.6" sudo ./debian9-x86_64.sh
-reboot
+
 
 Install by Webserver:
 wget -O - https://www.openmptcprouter.com/server/debian-x86_64.sh | KERNEL="6.12" sh
 wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh debian-x86_64.sh
-reboot
 
-after reboot ssh port chnaged to: 65222
+
+Install by git clone:
+git clone https://github.com/Ysurac/openmptcprouter-vps.git
+cd openmptcprouter-vps
+chmod +x debian.sh
+sudo ./debian.sh
+
+
+after installation "reboot" then ssh port chnaged to: 65222
 
 create swap space for 512mb ram vps
 Reboot to ensure persistence, then check with 
