@@ -31,3 +31,14 @@ htop (ram , cpu check)
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Error Fixes: 
+
+/etc/shadowsocks-libev/manager.json: No such file or directory — 
+Error occurs during the post-installation script of the omr-vps-admin package.
+Below command This creates the missing directory and empty file, allowing the post-install script to finish cleanly.
+
+mkdir -p /etc/shadowsocks-libev && touch /etc/shadowsocks-libev/manager.json && systemctl restart omr-admin
+
+reboot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
