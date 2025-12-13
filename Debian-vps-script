@@ -19,6 +19,7 @@ Install by git clone: Debian 13
 sudo apt update && apt install git && git clone https://github.com/Ysurac/openmptcprouter-vps.git && cd openmptcprouter-vps && chmod +x debian9-x86_64.sh && sudo ./debian9-x86_64.sh
 
 after installation "reboot" then ssh port chnaged to: 65222
+!!! Keys are in /root/openmptcprouter_config.txt !!!
 
 create swap space for 512mb ram vps
 Reboot to ensure persistence, then check with 
