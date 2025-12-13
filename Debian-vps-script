@@ -11,7 +11,7 @@ wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh
 
 
 Install by git clone:
-apt install git && git clone https://github.com/Ysurac/openmptcprouter-vps.git && cd openmptcprouter-vps && chmod +x debian9-x86_64.sh && sudo ./debian9-x86_64.sh
+sudo apt update && apt install git && git clone https://github.com/Ysurac/openmptcprouter-vps.git && cd openmptcprouter-vps && chmod +x debian9-x86_64.sh && sudo ./debian9-x86_64.sh
 
 
 after installation "reboot" then ssh port chnaged to: 65222
