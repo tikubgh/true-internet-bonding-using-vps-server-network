@@ -24,9 +24,13 @@ df -h (disk space check)
 apt install htop
 htop (ram , cpu check)
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Debian 12 errors fixes : libuv1t64 and openvpn
 
-Debian 12 errors: libuv1t64 to libuv1
-sudo apt update && wget https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/libuv1t64/libuv1/g' debian9-x86_64.sh && chmod +x debian9-x86_64.sh && KERNEL="6.6" sudo ./debian9-x86_64.sh
-or
 wget -O - https://www.openmptcprouter.com/server/debian12-x86_64.sh | sh
+or
+rm -f debian9-x86_64.sh* && sudo apt update && wget https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/libuv1t64/libuv1/g' debian9-x86_64.sh && sed -i 's/--default-release install/-- install/g' debian9-x86_64.sh && chmod +x debian9-x86_64.sh && KERNEL="6.6" sudo ./debian9-x86_64.sh
+or
+sudo apt update && wget https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/libuv1t64/libuv1/g' debian9-x86_64.sh && sed -i 's/--default-release install/-- install/g' debian9-x86_64.sh && chmod +x debian9-x86_64.sh && KERNEL="6.6" sudo ./debian9-x86_64.sh
 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
