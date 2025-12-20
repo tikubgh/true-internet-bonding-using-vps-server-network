@@ -1,10 +1,10 @@
-Firewall: 
+1.Firewall: 
 sudo apt update && sudo apt install ufw -y && sudo ufw allow from any && sudo ufw reload && sudo ufw status verbose && echo "y" | sudo ufw enable
 
-Install by github: Debian 12, 13
+2. Install by github: Debian 12, 13
 sudo apt update && wget https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && chmod +x debian9-x86_64.sh && KERNEL="6.12" sudo ./debian9-x86_64.sh
 
-after installation "reboot" then ssh port chnaged to: 65222
+Finish after installation "reboot" then ssh port chnaged to: 65222
 !!! Keys are in /root/openmptcprouter_config.txt !!!
 
 
@@ -29,7 +29,7 @@ htop (ram , cpu check)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Error Fixes: 
+3. Error Fixes: 
 /etc/shadowsocks-libev/manager.json: No such file or directory — 
 
 mkdir -p /etc/shadowsocks-libev && touch /etc/shadowsocks-libev/manager.json && systemctl restart omr-admin
