@@ -9,7 +9,7 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - Prevent CCTV downtime during ISP failures.
 - Faster game patch updates with combined speed.
 - Lower ping and jitter for smoother gameplay.
-- Smooth video calls without interruptions.
+- Smooth video calls & meetings without interruptions.
 - Faster buffering in single-link players like VLC and PotPlayer.
 - Increased video streaming buffer speed.
 - Bypass ISP throttling on YouTube, Netflix, Prime Video, etc.
