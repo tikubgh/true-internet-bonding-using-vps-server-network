@@ -20,16 +20,14 @@ mkdir -p /etc/shadowsocks-libev && touch /etc/shadowsocks-libev/manager.json && 
 Alternative Install by git clone: Debian 12, 13
 sudo apt update && apt install git && git clone https://github.com/Ysurac/openmptcprouter-vps.git && cd openmptcprouter-vps && chmod +x debian9-x86_64.sh && sudo ./debian9-x86_64.sh
 
-
 Alternative Install by Webserver: Debian 12
 wget -O - https://www.openmptcprouter.com/server/debian-x86_64.sh | KERNEL="6.12" sh
-or
 wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh debian-x86_64.sh
-or
 wget -O - https://www.openmptcprouter.com/server/debian12-x86_64.sh | sh
 
 Alternative: Debian 12
 wget -O - https://www.openmptcprouter.com/server-test/debian.sh | KERNEL="6.12" sh
+wget -O - https://www.openmptcprouter.com/server-test/debian-x86_64.sh | KERNEL="6.12" sh
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 create swap space for 512mb ram vps to 1gb
