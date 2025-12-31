@@ -28,7 +28,7 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - <span style="white-space: nowrap;">If we have a big file size download data with no resume facility with single connection link it can easily download with combined 100 mbps speed.</span>
 
 
-## 🛠️ Installation Guide
+## 🛠️ Installation Guide: Debian 12,13
 
 ### Server (VPS) Setup
 - <span style="white-space: nowrap;">It's in two parts server part vps instalaltion and client part Raspberry-pi openwrt installation,</span>
