@@ -14,7 +14,6 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - Increased video streaming buffer speed using multiple connections simultaneously.
 - Bypass ISP throttling on YouTube, Netflix, Prime Video, etc.
 - Boosted upload and download speeds.
-- Single static public IP from the VPS.
 - Non-resumable downloads use full combined bandwidth.
 - No trading failures due to ISP drops.
 - Mix fiber (FTTH) with wireless (5G) for balanced performance.
@@ -22,6 +21,7 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - Aggregate cellular data from different carriers.
 - Maintain session continuity during ISP swaps.
 - Automatically switch to working connection on failure.
+- Remote desktop (RDP) always uptime due to single static public IP from the VPS.
 - Full ISP bandwidth utilized even by a single user.
 
 ## ✨ Main Features
