@@ -23,6 +23,7 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - Automatically switch to working connection on failure.
 - Remote desktop (RDP) always uptime due to single static public IP from the VPS.
 - Full ISP bandwidth utilized even by a single user.
+- POS terminals & VoIP phone systems better connectivity.
 
 ## ✨ Main Features
 - <span style="white-space: nowrap;">If we have a big file size download data with no resume facility with single connection link it can easily download with combined 100 mbps speed.</span>
