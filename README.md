@@ -11,7 +11,7 @@ True Internet Bonding: 50 Mbps + 50 Mbps = 100 Mbps Single Connection
 - Lower ping and jitter for smoother gameplay.
 - Smooth video calls & meetings without interruptions.
 - Faster buffering in single-link players like VLC and PotPlayer.
-- Increased video streaming buffer speed.
+- Increased video streaming buffer speed using multiple connections simultaneously.
 - Bypass ISP throttling on YouTube, Netflix, Prime Video, etc.
 - Boosted upload and download speeds.
 - Single static public IP from the VPS.
