@@ -28,6 +28,8 @@ wget https://www.openmptcprouter.com/server/debian-x86_64.sh && KERNEL="6.12" sh
 wget -O - https://www.openmptcprouter.com/server/debian12-x86_64.sh | sh
 
 Alternative: Debian 12
+wget -O - https://www.openmptcprouter.com/server-test/debian.sh | KERNEL="6.18" sh
+
 wget -O - https://www.openmptcprouter.com/server-test/debian.sh | KERNEL="6.12" sh
 wget -O - https://www.openmptcprouter.com/server-test/debian-x86_64.sh | KERNEL="6.12" sh
 
