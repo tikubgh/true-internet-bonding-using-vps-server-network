@@ -26,7 +26,4 @@ Optional installation arm64 ampere =
 rm -f /etc/apt/sources.list.d/bionic*.list && apt update && wget -qO debian9-x86_64.sh https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/--default-release install /install /g' debian9-x86_64.sh && sed -i '/bionic/d' debian9-x86_64.sh && sed -i 's/.*bpftune.*/:/g' debian9-x86_64.sh && MQVPN=no sh debian9-x86_64.sh
 
 ==========================================================
-MQVPN compiler =
-apt update && apt install -y build-essential git cmake ninja-build libssl-dev libev-dev libsodium-dev && rm -rf /tmp/mqvpn && git clone --recursive https://github.com/Ysurac/mqvpn.git /tmp/mqvpn && cd /tmp/mqvpn && ( [ -f build.sh ] && bash build.sh || ( cmake . && make ) ) && find . -type f -name mqvpn -executable -exec cp {} /usr/local/bin/ \;
 
-===============================================
