@@ -23,7 +23,7 @@ killall -9 apt apt-get dpkg 2>/dev/null; rm -f /var/lib/apt/lists/lock /var/cach
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Optional installation arm64 ampere =
-rm -f /etc/apt/sources.list.d/bionic*.list && apt update && wget -qO debian9-x86_64.sh https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/--default-release install /install /g' debian9-x86_64.sh && sed -i '/bionic/d' debian9-x86_64.sh && sed -i 's/.*bpftune.*/:/g' debian9-x86_64.sh && MQVPN=no sh debian9-x86_64.sh
+rm -f /etc/apt/sources.list.d/bionic*.list && apt update && wget -qO debian9-x86_64.sh https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh && sed -i 's/--default-release install /install /g' debian9-x86_64.sh && sed -i '/bionic/d' debian9-x86_64.sh && sh debian9-x86_64.sh
 
 ==========================================================
 
