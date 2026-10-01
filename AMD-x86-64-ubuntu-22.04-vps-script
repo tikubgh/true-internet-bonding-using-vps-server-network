@@ -27,3 +27,8 @@ rm -f /etc/apt/sources.list.d/bionic*.list && apt update && wget -qO debian9-x86
 
 ==========================================================
 
+Tested 1 arm64 ubuntu 22.04 =
+echo 185.199.110.133 raw.githubusercontent.com>>/etc/hosts;apt -yf -o Dpkg::Options::=--force-overwrite install;install -D /dev/null /etc/nftables/custom.d/0.nft;wget -O- https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh|sed 's/--default-release//;s/set -e/set +e/'|UPDATE=no sh
+
+=====================================================================
+
