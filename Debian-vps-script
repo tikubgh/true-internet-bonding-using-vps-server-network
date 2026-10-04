@@ -20,11 +20,12 @@ sudo apt update && apt install git && git clone https://github.com/Ysurac/openmp
 
 Alternative Install by Webserver: Debian 12
 curl -sL https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh | sh
+curl -sL https://raw.githubusercontent.com/Ysurac/openmptcprouter-vps/refs/heads/develop/debian9-x86_64.sh  | KERNEL="6.18" sh
 
-wget -O - https://www.openmptcprouter.com/server/debian-x86_64.sh | KERNEL="6.12" sh
+wget -O - https://www.openmptcprouter.com/server/debian-x86_64.sh | KERNEL="6.18" sh
 wget -O - https://www.openmptcprouter.com/server/debian12-x86_64.sh | sh
 wget -O - https://www.openmptcprouter.com/server-test/debian.sh | KERNEL="6.18" sh
-wget -O - https://www.openmptcprouter.com/server-test/debian-x86_64.sh | KERNEL="6.12" sh
+wget -O - https://www.openmptcprouter.com/server-test/debian-x86_64.sh | KERNEL="6.18" sh
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 create swap space for 512mb ram vps to 1gb
